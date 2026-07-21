@@ -7,18 +7,20 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('myblog', '0001_initial'),
+        ("myblog", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='blog',
-            name='photo',
-            field=cloudinary.models.CloudinaryField(max_length=255, null=True, verbose_name='photo'),
+            model_name="blog",
+            name="photo",
+            field=cloudinary.models.CloudinaryField(
+                max_length=255, null=True, verbose_name="photo"
+            ),
         ),
         migrations.AlterField(
-            model_name='blog',
-            name='text',
+            model_name="blog",
+            name="text",
             field=models.TextField(max_length=2000),
         ),
     ]

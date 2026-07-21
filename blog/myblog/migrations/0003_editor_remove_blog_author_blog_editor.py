@@ -8,27 +8,44 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('myblog', '0002_blog_photo_alter_blog_text'),
+        ("myblog", "0002_blog_photo_alter_blog_text"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Editor',
+            name="Editor",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('firstName', models.CharField(max_length=50)),
-                ('lastName', models.CharField(max_length=50)),
-                ('bio', models.CharField(max_length=500)),
-                ('editorPhoto', cloudinary.models.CloudinaryField(max_length=255, null=True, verbose_name='editorPhoto')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("firstName", models.CharField(max_length=50)),
+                ("lastName", models.CharField(max_length=50)),
+                ("bio", models.CharField(max_length=500)),
+                (
+                    "editorPhoto",
+                    cloudinary.models.CloudinaryField(
+                        max_length=255, null=True, verbose_name="editorPhoto"
+                    ),
+                ),
             ],
         ),
         migrations.RemoveField(
-            model_name='blog',
-            name='author',
+            model_name="blog",
+            name="author",
         ),
         migrations.AddField(
-            model_name='blog',
-            name='editor',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='myblog.editor'),
+            model_name="blog",
+            name="editor",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to="myblog.editor",
+            ),
         ),
     ]
