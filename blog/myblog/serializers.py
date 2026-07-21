@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from .models import Blog
-from .models import Editor
+
+from .models import Blog, Editor
 
 
 class EditorSerializer(serializers.ModelSerializer):

@@ -1,12 +1,14 @@
 from urllib import response
-from django.shortcuts import render, redirect
+
+from django.shortcuts import redirect, render
 from myblog.forms import BlogForm
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from .models import *
 from .serializers import *
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
-from rest_framework import status
 
 
 # Create your views here.

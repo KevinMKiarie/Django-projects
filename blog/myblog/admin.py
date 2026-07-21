@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Blog
-from .models import Editor
+
+from .models import Blog, Editor
 
 # Register your models here.
 
