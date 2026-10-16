@@ -18,6 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth import views
 from django.urls import include, path
+
 # importing registration
 from django_registration.backends.one_step.views import RegistrationView
 
